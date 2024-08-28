@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route, Link } from "react-router-dom";
+import Homepage from './page/homepage';
+import ReactQueryPage from './page/reactQueryPage';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav>
+        <Link to="/" style={{ marginRight: "10px" }}>
+          Homepage
+        </Link>
+        <Link to="/react-query">
+          React Query
+        </Link>
+      </nav>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/react-query" element={<ReactQueryPage />} />
+      </Routes>
     </div>
   );
 }
