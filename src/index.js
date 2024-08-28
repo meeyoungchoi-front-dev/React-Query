@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import {BrowserRouter } from "react-router-dom";
 
 // QueryClient 인스턴스 생성
 const queryClient = new QueryClient();
@@ -12,7 +13,9 @@ const queryClient = new QueryClient();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <QueryClientProvider client={queryClient}>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
     <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
   </QueryClientProvider>
 );
